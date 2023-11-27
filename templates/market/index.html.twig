@@ -1,0 +1,38 @@
+{% extends 'newfrontbase.html.twig' %}
+
+
+
+{% block body %}
+
+    <section id="product1" class="section-p1">
+        <h2>All Ads</h2>
+
+        <div class="pro-container">
+            <!-- 1 -->
+            {% for post in posts %}
+            <div class="pro">
+                <img src="{{ asset('uploads/' ~ post.image1 )}}" alt="">
+                <div class="des">
+
+                    <h5>{{ post.model }}</h5>
+
+                    <h4>Price : {{ post.price }}</h4>
+                    <h4>City : {{ post.city }}</h4>
+                    <h5>Contact : {{ post.ContactNumber }}</h5>
+                </div>
+                <a href="{{ path('view_post',{post_id:post.id}) }}" class="cart" style="text-decoration: none">View</a>
+            </div>
+            {% endfor %}
+
+            <!-- 2 -->
+
+            <!-- 8 -->
+
+        </div>
+
+    </section>
+
+
+
+
+{% endblock %}
